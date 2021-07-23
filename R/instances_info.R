@@ -1,11 +1,11 @@
 #' @export
-instances_info = function(url = 'https://instances.mastodon.xyz/') {
+instances_info = function(url = 'https://ursal.zone/') {
   GET(paste0(url, 'instances.json')) %>% content(as = 'text') %>%
     jsonlite::fromJSON()
 }
 
 #' @export
-ggplot_instances_info = function(url = 'https://instances.mastodon.xyz/',
+ggplot_instances_info = function(url = 'https://ursal.zone/',
   df_info = instances_info(url), n_instances = 20) {
   library(ggplot2)
   subtitle = paste('Top', n_instances, 'instances (among', nrow(df_info),
